@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Assets/css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import Header from './Components/header';
+import Footer from './Components/footer';
+import Singlepost from './Components/singlepost';
+
+const routing = (
+  <Router>
+    <React.StrictMode>
+    <Header/>
+    <Switch>
+      <Route exact path="/" component={App} />
+      <Route path="/post/:slug" component={Singlepost} />
+    </Switch>
+    <Footer/>
+    </React.StrictMode>
+  </Router>
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routing,
   document.getElementById('root')
 );
 

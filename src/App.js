@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import './Assets/css/App.css';
+import axiosInstance from './axios';
+import Posts from './Components/posts';
+
 
 function App() {
+
+  const [appState, setAppState] = useState({
+    posts: null,
+  })
+  useEffect(() => {
+    axiosInstance.get('posts/posts/').then((res) => {
+			const allPosts = res.data;
+      console.log(allPosts);
+			setAppState({ posts: allPosts });
+    });
+  }, [setAppState])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to this free Blog</h1> 
+      <Posts posts={appState.posts}/>
     </div>
   );
 }
