@@ -85,7 +85,7 @@ function Profile() {
                                 </TableRow>
                                 <TableRow>
                                     <TableCell colSpan={4} align="right">
-                                        <Button href={'/admin/create'} variant="contained" color="primary">
+                                        <Button href={'/profile/create/'} variant="contained" color="primary">
                                             New Post
                                         </Button>
                                     </TableCell>
@@ -139,7 +139,7 @@ function Profile() {
                                 })}
                                 <TableRow>
                                     <TableCell colSpan={4} align="right">
-                                        <Button href={'/admin/create'} variant="contained" color="primary">
+                                        <Button href={'/profile/create/'} variant="contained" color="primary">
                                             New Post
                                         </Button>
                                     </TableCell>

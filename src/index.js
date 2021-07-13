@@ -16,6 +16,7 @@ import Login from './Components/login';
 import SignUp from './Components/register';
 import Logout from './Components/logout';
 import Profile from './Components/Profile/main';
+import Create from './Components/Profile/create';
 
 
 const routing = (
@@ -28,7 +29,8 @@ const routing = (
       <Route path="/register/" component={SignUp} />
       <Route path="/login/" component={Login} />
       <Route path="/logout/" component={Logout} />
-      <Route path="/profile/" component={Profile} />
+      <Route exact path="/profile/" component={Profile} />
+      <Route exact path="/profile/create/" component={Create} />
     </Switch>
     <Footer/>
     </React.StrictMode>

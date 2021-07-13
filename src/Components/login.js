@@ -64,6 +64,8 @@ export default function Login() {
             .then((res) => {
                 console.log("res", res);
                 localStorage.setItem('token', res.data.token)
+                localStorage.setItem('user_id', res.data.user_id)
+
                 axiosInstance.defaults.headers['Authorization'] =
                     'Token ' + localStorage.getItem('token')
                 history.push('/')
