@@ -56,7 +56,7 @@ const Posts = (props) => {
                                         </CardActionArea>
                                     </Link>
                                     <CardActions>
-                                        <Button size="small" color="primary">
+                                        <Button size="small" color="primary" href={'post/'+ post.slug}>
                                             Learn More
                                         </Button>
                                     </CardActions>

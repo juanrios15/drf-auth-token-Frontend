@@ -12,6 +12,11 @@ import {
 import Header from './Components/header';
 import Footer from './Components/footer';
 import Singlepost from './Components/singlepost';
+import Login from './Components/login';
+import SignUp from './Components/register';
+import Logout from './Components/logout';
+import Profile from './Components/Profile/main';
+
 
 const routing = (
   <Router>
@@ -20,6 +25,10 @@ const routing = (
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/post/:slug" component={Singlepost} />
+      <Route path="/register/" component={SignUp} />
+      <Route path="/login/" component={Login} />
+      <Route path="/logout/" component={Logout} />
+      <Route path="/profile/" component={Profile} />
     </Switch>
     <Footer/>
     </React.StrictMode>
